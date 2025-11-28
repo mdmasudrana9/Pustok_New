@@ -1,26 +1,291 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* PUSTOK Design System - Luxurious Literary Platform 
+All colors MUST be HSL. Enhanced for gorgeous UI.
+*/
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Refined ivory backgrounds with warmth */
+    --background: 32 45% 98%;
+    --foreground: 25 30% 12%;
+
+    /* Elegant pearl cards with subtle depth */
+    --card: 30 50% 99%;
+    --card-foreground: 25 30% 12%;
+
+    --popover: 30 50% 99%;
+    --popover-foreground: 25 30% 12%;
+
+    /* Rich midnight blue with depth */
+    --primary: 215 85% 20%;
+    --primary-foreground: 32 45% 98%;
+
+    /* Sophisticated secondary with warmth */
+    --secondary: 35 40% 92%;
+    --secondary-foreground: 25 30% 12%;
+
+    /* Refined muted tones */
+    --muted: 32 30% 94%;
+    --muted-foreground: 25 20% 40%;
+
+    /* Luxurious accent with golden undertones */
+    --accent: 40 65% 88%;
+    --accent-foreground: 25 30% 12%;
+
+    /* Elegant destructive red */
+    --destructive: 0 80% 58%;
+    --destructive-foreground: 32 45% 98%;
+
+    /* Delicate borders and inputs */
+    --border: 35 25% 88%;
+    --input: 35 30% 91%;
+    --ring: 215 85% 20%;
+
+    /* Deep literary browns with richness */
+    --literary-brown: 25 45% 28%;
+    --literary-brown-light: 25 35% 48%;
+
+    /* Vibrant book spine colors with more saturation */
+    --book-spine-red: 0 75% 55%;
+    --book-spine-blue: 215 85% 50%;
+    --book-spine-green: 140 60% 45%;
+    --book-spine-gold: 45 95% 65%;
+
+    /* Sophisticated gradients with depth */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(215 85% 20%) 0%,
+      hsl(215 75% 30%) 50%,
+      hsl(220 70% 40%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(30 50% 99%) 0%,
+      hsl(32 45% 96%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      120deg,
+      hsl(40 65% 88%) 0%,
+      hsl(45 60% 90%) 100%
+    );
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(215 85% 20%) 0%,
+      hsl(220 80% 35%) 100%
+    );
+    --gradient-golden: linear-gradient(
+      135deg,
+      hsl(45 95% 65%) 0%,
+      hsl(40 85% 70%) 100%
+    );
+    --gradient-surface: linear-gradient(
+      145deg,
+      hsl(32 45% 98%) 0%,
+      hsl(35 40% 95%) 100%
+    );
+
+    /* Enhanced shadows with depth and warmth */
+    --shadow-book: 0 8px 32px -4px hsl(215 85% 20% / 0.15),
+      0 4px 16px -2px hsl(215 85% 20% / 0.08);
+    --shadow-card: 0 4px 16px -2px hsl(25 30% 12% / 0.08),
+      0 2px 8px -1px hsl(25 30% 12% / 0.04);
+    --shadow-elegant: 0 12px 40px -8px hsl(215 85% 20% / 0.25);
+    --shadow-glow: 0 0 60px hsl(45 95% 65% / 0.3);
+    --shadow-floating: 0 20px 80px -20px hsl(215 85% 20% / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Luxurious dark literary theme */
+    --background: 25 20% 6%;
+    --foreground: 32 40% 92%;
+
+    --card: 25 25% 10%;
+    --card-foreground: 32 40% 92%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 32 40% 92%;
+
+    --primary: 215 90% 70%;
+    --primary-foreground: 25 20% 6%;
+
+    --secondary: 25 20% 16%;
+    --secondary-foreground: 32 40% 92%;
+
+    --muted: 25 20% 16%;
+    --muted-foreground: 25 25% 58%;
+
+    --accent: 35 50% 28%;
+    --accent-foreground: 32 40% 92%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 25 20% 6%;
+
+    --border: 25 20% 18%;
+    --input: 25 20% 16%;
+    --ring: 215 90% 70%;
+
+    /* Enhanced dark theme book colors */
+    --literary-brown: 25 35% 68%;
+    --literary-brown-light: 25 30% 52%;
+
+    --book-spine-red: 0 70% 60%;
+    --book-spine-blue: 215 80% 65%;
+    --book-spine-green: 140 55% 55%;
+    --book-spine-gold: 45 90% 70%;
+
+    /* Sophisticated dark gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(215 90% 70%) 0%,
+      hsl(220 85% 60%) 50%,
+      hsl(225 80% 50%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(25 25% 10%) 0%,
+      hsl(25 20% 13%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      120deg,
+      hsl(35 50% 28%) 0%,
+      hsl(40 45% 32%) 100%
+    );
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(215 90% 70%) 0%,
+      hsl(220 85% 60%) 100%
+    );
+    --gradient-golden: linear-gradient(
+      135deg,
+      hsl(45 90% 70%) 0%,
+      hsl(40 80% 75%) 100%
+    );
+    --gradient-surface: linear-gradient(
+      145deg,
+      hsl(25 20% 6%) 0%,
+      hsl(25 25% 9%) 100%
+    );
+
+    /* Enhanced dark shadows with glow effects */
+    --shadow-book: 0 8px 32px -4px hsl(0 0% 0% / 0.4),
+      0 4px 16px -2px hsl(0 0% 0% / 0.25);
+    --shadow-card: 0 4px 16px -2px hsl(0 0% 0% / 0.2),
+      0 2px 8px -1px hsl(0 0% 0% / 0.1);
+    --shadow-elegant: 0 12px 40px -8px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 60px hsl(215 90% 70% / 0.4);
+    --shadow-floating: 0 20px 80px -20px hsl(0 0% 0% / 0.6);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Book Card Styles */
+  .book-card {
+    background: var(--gradient-card);
+  }
+
+  .book-spine {
+    @apply relative overflow-hidden rounded-lg;
+  }
+
+  /* Action Button Variants */
+  .btn-buy {
+    @apply bg-gradient-to-r from-[hsl(var(--book-spine-green))] to-[hsl(var(--book-spine-green))/90] text-white shadow-lg;
+  }
+
+  .btn-borrow {
+    @apply bg-gradient-to-r from-[hsl(var(--book-spine-blue))] to-[hsl(var(--book-spine-blue))/90] text-white shadow-lg;
+  }
+
+  .btn-donate {
+    @apply bg-gradient-to-r from-[hsl(var(--book-spine-gold))] to-[hsl(var(--book-spine-gold))/90] text-[hsl(var(--literary-brown))] shadow-lg;
+  }
+
+  .btn-exchange {
+    @apply bg-gradient-to-r from-[hsl(var(--book-spine-red))] to-[hsl(var(--book-spine-red))/90] text-white shadow-lg;
+  }
+
+  /* UI Elements */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+  }
+
+  .luxury-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .golden-gradient {
+    background: var(--gradient-golden);
+  }
+
+  .surface-gradient {
+    background: var(--gradient-surface);
+  }
+
+  .floating-shadow {
+    box-shadow: var(--shadow-floating);
+  }
+
+  /* Text Effects */
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--book-spine-gold))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px hsl(var(--primary) / 0.3);
+  }
 }
