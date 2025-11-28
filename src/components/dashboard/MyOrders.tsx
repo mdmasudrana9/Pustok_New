@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Package, Clock, CheckCircle, XCircle, Eye } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const MyOrders = () => {
   const [orders] = useState([
@@ -226,7 +228,7 @@ const MyOrders = () => {
               make your first purchase!
             </p>
             <Button size="lg" asChild>
-              <a href="/books">Browse Books</a>
+              <Link href="/books">Browse Books</Link>
             </Button>
           </div>
         )}

@@ -77,7 +77,7 @@ const MyDonate = () => {
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">My Donations</h1>
           <p className="text-muted-foreground">
-            Track your book donations and see the impact you've made
+            Track your book donations and see the impact you&apos;ve made
           </p>
         </div>
 

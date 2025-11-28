@@ -1,27 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/components/ui/use-toast";
+import { useCart } from "@/contexts/CartContext";
 import {
+  ArrowRight,
   Minus,
   Plus,
-  Trash2,
   ShoppingBag,
-  ArrowRight,
   Tag,
+  Trash2,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "@/contexts/CartContext";
-import { useToast } from "@/components/ui/use-toast";
+import { useState } from "react";
 
 const Cart = () => {
   const { toast } = useToast();
-  const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart();
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
   const [promoCode, setPromoCode] = useState("");
 
   const applyPromoCode = () => {
@@ -47,23 +47,23 @@ const Cart = () => {
   const discount = promoCode.toLowerCase() === "book10" ? subtotal * 0.1 : 0;
   const total = subtotal + shipping - discount;
 
-  const handleCheckout = () => {
-    // Simulate successful checkout
-    toast({
-      title: "Order Placed Successfully!",
-      description: `Your order of $${total.toFixed(
-        2
-      )} has been confirmed. Check My Orders for tracking details.`,
-    });
+  // const handleCheckout = () => {
+  //   // Simulate successful checkout
+  //   toast({
+  //     title: "Order Placed Successfully!",
+  //     description: `Your order of $${total.toFixed(
+  //       2
+  //     )} has been confirmed. Check My Orders for tracking details.`,
+  //   });
 
-    // Clear cart after successful checkout
-    clearCart();
+  //   // Clear cart after successful checkout
+  //   clearCart();
 
-    // In a real app, this would redirect to order confirmation page
-    setTimeout(() => {
-      window.location.href = "/dashboard/my-orders";
-    }, 2000);
-  };
+  //   // In a real app, this would redirect to order confirmation page
+  //   setTimeout(() => {
+  //     window.location.href = "/dashboard/my-orders";
+  //   }, 2000);
+  // };
 
   if (cartItems.length === 0) {
     return (

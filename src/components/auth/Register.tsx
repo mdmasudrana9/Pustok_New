@@ -230,7 +230,7 @@ const Register = () => {
                       <Checkbox
                         id="terms"
                         checked={formData.acceptTerms}
-                        onCheckedChange={(checked: any) =>
+                        onCheckedChange={(checked) =>
                           setFormData({
                             ...formData,
                             acceptTerms: checked as boolean,

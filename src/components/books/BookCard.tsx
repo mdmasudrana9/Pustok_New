@@ -3,8 +3,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { useCart } from "@/contexts/CartContext";
 
-import { Star, ShoppingCart, BookOpen, Gift, RefreshCw } from "lucide-react";
+import { BookOpen, Gift, RefreshCw, ShoppingCart, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,12 +25,12 @@ interface BookCardProps {
 }
 
 const BookCard = ({ book }: BookCardProps) => {
-  // const { addToCart } = useCart();
+  const { addToCart } = useCart();
 
   const handleAddToCart = (
     action: "buy" | "borrow" | "donate" | "exchange"
   ) => {
-    // addToCart(book, action);
+    addToCart(book, action);
   };
 
   const getActionButton = () => {

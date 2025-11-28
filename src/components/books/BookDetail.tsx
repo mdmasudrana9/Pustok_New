@@ -2,31 +2,30 @@
 
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  Star,
-  ShoppingCart,
+  ArrowLeft,
   BookOpen,
   Gift,
-  RefreshCw,
-  ArrowLeft,
   Heart,
-  Share2,
   MessageCircle,
+  RefreshCw,
+  Share2,
+  ShoppingCart,
+  Star,
   User,
 } from "lucide-react";
 
 import { useCart } from "@/contexts/CartContext";
 import Image from "next/image";
-import { useParams } from "next/navigation";
 import Link from "next/link";
 
 const BookDetail = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const { addToCart } = useCart();
   const [selectedAction, setSelectedAction] = useState<string>("buy");
 

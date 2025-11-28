@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Badge } from "@/components/ui/badge";
@@ -68,47 +69,47 @@ const MyBooks = () => {
     },
   ];
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "active":
-        return "bg-bookspine-green text-white";
-      case "sold":
-        return "bg-muted text-muted-foreground";
-      case "pending":
-        return "bg-bookspine-gold text-literary-brown";
-      default:
-        return "bg-secondary text-secondary-foreground";
-    }
-  };
+  // const getStatusColor = (status: string) => {
+  //   switch (status) {
+  //     case "active":
+  //       return "bg-bookspine-green text-white";
+  //     case "sold":
+  //       return "bg-muted text-muted-foreground";
+  //     case "pending":
+  //       return "bg-bookspine-gold text-literary-brown";
+  //     default:
+  //       return "bg-secondary text-secondary-foreground";
+  //   }
+  // };
 
-  const getConditionColor = (condition: string) => {
-    switch (condition) {
-      case "new":
-        return "bg-bookspine-green text-white";
-      case "excellent":
-        return "bg-bookspine-blue text-white";
-      case "good":
-        return "bg-bookspine-gold text-literary-brown";
-      case "fair":
-        return "bg-bookspine-red text-white";
-      default:
-        return "bg-secondary text-secondary-foreground";
-    }
-  };
+  // const getConditionColor = (condition: string) => {
+  //   switch (condition) {
+  //     case "new":
+  //       return "bg-bookspine-green text-white";
+  //     case "excellent":
+  //       return "bg-bookspine-blue text-white";
+  //     case "good":
+  //       return "bg-bookspine-gold text-literary-brown";
+  //     case "fair":
+  //       return "bg-bookspine-red text-white";
+  //     default:
+  //       return "bg-secondary text-secondary-foreground";
+  //   }
+  // };
 
-  const getAvailabilityIcons = (availableFor: string[]) => {
-    const icons = {
-      buy: ShoppingCart,
-      borrow: BookOpen,
-      donate: Gift,
-      exchange: RefreshCw,
-    };
+  // const getAvailabilityIcons = (availableFor: string[]) => {
+  //   const icons = {
+  //     buy: ShoppingCart,
+  //     borrow: BookOpen,
+  //     donate: Gift,
+  //     exchange: RefreshCw,
+  //   };
 
-    return availableFor.map((type) => {
-      const Icon = icons[type as keyof typeof icons];
-      return <Icon key={type} className="h-4 w-4" />;
-    });
-  };
+  //   return availableFor.map((type) => {
+  //     const Icon = icons[type as keyof typeof icons];
+  //     return <Icon key={type} className="h-4 w-4" />;
+  //   });
+  // };
 
   const filteredBooks = myBooks.filter(
     (book) =>

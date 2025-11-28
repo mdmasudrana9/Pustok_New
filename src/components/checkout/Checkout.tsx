@@ -22,6 +22,7 @@ import {
 
 import { useToast } from "@/hooks/use-toast";
 import Link from "next/link";
+import Image from "next/image";
 
 const Checkout = () => {
   const { toast } = useToast();
@@ -535,7 +536,9 @@ const Checkout = () => {
                   <div className="space-y-3">
                     {cartItems.map((item) => (
                       <div key={item.id} className="flex gap-3">
-                        <img
+                        <Image
+                          height={64}
+                          width={64}
                           src={item.image}
                           alt={item.title}
                           className="w-16 h-16 object-cover rounded"

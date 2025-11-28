@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -14,6 +15,7 @@ import {
   Eye,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const MyExchange = () => {
   const [exchanges] = useState([
@@ -281,7 +283,7 @@ const MyExchange = () => {
               and find someone to exchange with!
             </p>
             <Button size="lg" asChild>
-              <a href="/books">Browse Books</a>
+              <Link href="/books">Browse Books</Link>
             </Button>
           </div>
         )}
